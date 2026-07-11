@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hivelogbee - Terms Acceptance</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background: #f5f5f5;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+        .container {
+          background: white;
+          padding: 25px;
+          border-radius: 10px;
+          width: 350px;
+          box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+          text-align: center;
+        }
+        .links {
+          margin: 15px 0;
+        }
+        .links a {
+          color: #007bff;
+          text-decoration: none;
+        }
+        .links a:hover {
+          text-decoration: underline;
+        }
+        button {
+          width: 100%;
+          padding: 10px;
+          border: none;
+          border-radius: 5px;
+          background: gray;
+          color: white;
+          cursor: not-allowed;
+        }
+        button.active {
+          background: green;
+          cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Welcome to Hivelogbee</h2>
+    <p>Please read and accept the following:</p>
+    <div class="links">
+        <p>
+            <!-- تم تصحيح الروابط هنا لتتطابق مع أسماء ملفاتك -->
+            📄 <a href="privacy_policy.html" target="_blank">Privacy Policy</a>
+
+            📜 <a href="terms_of_use.html" target="_blank">Terms of Use</a>
+
+            🗑️ <a href="delete_account.html" target="_blank">Account Deletion</a>
+        </p>
+    </div>
+    <label>
+        <input type="checkbox" id="agree">
+        I agree to the Terms and Privacy Policy
+    </label>
+
+
+
+    <button id="continueBtn" disabled>Continue</button>
+</div>
+<script>
+    const checkbox = document.getElementById("agree");
+    const button = document.getElementById("continueBtn");
+    checkbox.addEventListener("change", () => {
+      if (checkbox.checked) {
+        button.disabled = false;
+        button.classList.add("active");
+      } else {
+        button.disabled = true;
+        button.classList.remove("active");
+      }
+    });
+</script>
+</body>
+</html>

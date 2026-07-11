@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr" id="html-tag">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditions d'Utilisation - Hivelogbee</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background-color: #f9f9f9; margin: 0; padding: 20px; transition: background-color 0.3s, color 0.3s; }
+        .header-bar { max-width: 800px; margin: 0 auto 20px auto; display: flex; justify-content: flex-end; }
+        select { padding: 8px 15px; font-size: 16px; border-radius: 8px; border: 1px solid #ccc; background-color: #fff; color: #333; cursor: pointer; outline: none; }
+        .container { max-width: 800px; margin: 0 auto; padding: 30px; background-color: #fff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: background-color 0.3s, box-shadow 0.3s; }
+        h1 { text-align: center; font-size: 26px; color: #222; margin-bottom: 10px; }
+        .effective-date { text-align: center; color: #666; margin-bottom: 30px; font-style: italic; }
+        h2 { font-size: 18px; color: #444; margin-top: 25px; border-bottom: 2px solid #f0f0f0; padding-bottom: 8px; }
+        p, li { margin-bottom: 10px; text-align: justify; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .rtl { direction: rtl; text-align: right; }
+        .rtl p, .rtl li { text-align: right; }
+        @media (prefers-color-scheme: dark) {
+          body { background-color: #121212; color: #e0e0e0; }
+          .container { background-color: #1e1e1e; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+          h1 { color: #ffffff; }
+          h2 { color: #dddddd; border-bottom: 2px solid #333; }
+          .effective-date { color: #aaaaaa; }
+          select { background-color: #333; color: #fff; border: 1px solid #555; }
+          a { color: #66b3ff; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header-bar">
+    <label for="language-selector"></label><select id="language-selector" onchange="changeLanguage()">
+    <option value="fr">Français</option>
+    <option value="ar">العربية</option>
+    <option value="en">English</option>
+    <option value="es">Español</option>
+    <option value="tr">Türkçe</option>
+</select>
+</div>
+
+<div class="container" id="content-container"></div>
+
+<script>
+    const translations = {
+      fr: `
+        <h1>Conditions d'Utilisation de Hivelogbee</h1>
+        <p class="effective-date"><strong>Date de prise d'effet :</strong> Mai 2026</p>
+        <h2>1. Acceptation des Conditions</h2>
+        <p>En utilisant l'application Hivelogbee, vous acceptez de vous conformer aux présentes Conditions d'Utilisation. Si vous n'êtes pas d'accord avec ces termes, veuillez ne pas utiliser l'application.</p>
+        <h2>2. Utilisation de l'Application</h2>
+        <p>Vous pouvez utiliser l'application uniquement à des fins personnelles et légales. Vous ne devez en aucun cas l'utiliser pour des activités illégales, nuisibles ou non autorisées.</p>
+        <h2>3. Compte Utilisateur</h2>
+        <p>Vous êtes responsable du maintien de la confidentialité de vos identifiants de connexion et de toutes les activités qui se produisent sous votre compte.</p>
+        <h2>4. Contenu Utilisateur et Synchronisation des Données</h2>
+        <p>Vous êtes seul responsable des données et du contenu que vous saisissez dans l'application. Nous déclinons toute responsabilité en cas de perte de données, de mauvaise utilisation ou d'accès non autorisé résultant de vos propres actions.</p>
+        <p>L'application inclut une fonctionnalité hors ligne (Offline) qui stocke temporairement les données localement sur votre appareil. Vous êtes responsable de la synchronisation de vos données avec notre base de données sur les serveurs Supabase en Europe lorsqu'une connexion Internet est disponible. Nous ne sommes pas responsables de toute perte de données si l'application est désinstallée ou si les données de l'appareil sont effacées avant que la synchronisation avec notre base de données sur les serveurs Supabase en Europe ne soit terminée.</p>
+        <h2>5. Publicité</h2>
+        <p>L'application peut afficher des publicités (telles que des bannières et des annonces interstitielles) fournies par des services tiers.</p>
+        <h2>6. Propriété Intellectuelle</h2>
+        <p>La conception, les fonctionnalités et le logiciel sous-jacent de l'application sont la propriété exclusive du développeur et sont protégés par les lois applicables. Cependant, tout le contenu généré par l'utilisateur, y compris les données apicoles, les informations personnelles, les détails des ruchers et les données de localisation, reste la propriété exclusive de l'utilisateur.</p>
+        <h2>7. Disponibilité du Service</h2>
+        <p>Nous ne garantissons pas que l'application sera toujours disponible, ininterrompue ou exempte d'erreurs. Des opérations de maintenance, des mises à jour ou des problèmes techniques peuvent affecter la disponibilité du service.</p>
+        <h2>8. Clause de Non-responsabilité</h2>
+        <p>L'application est fournie "telle quelle" (as is) sans aucune garantie d'aucune sorte, qu'elle soit expresse ou implicite.</p>
+        <h2>9. Limitation de Responsabilité</h2>
+        <p>Nous ne serons en aucun cas tenus responsables des dommages directs, indirects, accessoires ou consécutifs découlant de l'utilisation ou de l'impossibilité d'utiliser l'application.</p>
+        <h2>10. Résiliation</h2>
+        <p>Nous nous réservons le droit de suspendre ou de résilier votre accès à l'application à tout moment en cas de violation des présentes Conditions.</p>
+        <h2>11. Droit Applicable et Juridiction</h2>
+        <p>Les présentes Conditions sont régies par les lois du Royaume du Maroc. Tout litige découlant de l'utilisation de l'application sera soumis à la compétence exclusive des tribunaux marocains.</p>
+        <h2>12. Modifications des Conditions</h2>
+        <p>Nous pouvons mettre à jour ces Conditions de temps à autre. Les modifications vous seront communiquées au sein de l'application ou par d'autres moyens appropriés.</p>
+        <h2>13. Contact</h2>
+        <p>Développeur<br>E-mail : <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a></p>
+      `,
+      ar: `
+        <h1>شروط الاستخدام لتطبيق Hivelogbee</h1>
+        <p class="effective-date"><strong>تاريخ السريان:</strong> مايو 2026</p>
+        <h2>1. قبول الشروط</h2>
+        <p>باستخدامك لتطبيق Hivelogbee، فإنك توافق على الالتزام بشروط الاستخدام هذه. إذا كنت لا توافق على هذه الشروط، يرجى عدم استخدام التطبيق.</p>
+        <h2>2. استخدام التطبيق</h2>
+        <p>يمكنك استخدام التطبيق فقط للأغراض الشخصية والقانونية. يجب عليك عدم استخدامه لأي أنشطة غير قانونية أو ضارة أو غير مصرح بها.</p>
+        <h2>3. حساب المستخدم</h2>
+        <p>أنت مسؤول عن الحفاظ على سرية بيانات الدخول الخاصة بك وعن جميع الأنشطة التي تحدث تحت حسابك.</p>
+        <h2>4. محتوى المستخدم ومزامنة البيانات</h2>
+        <p>أنت وحدك المسؤول عن البيانات والمحتوى الذي تدخله في التطبيق. نحن نخلي مسؤوليتنا عن أي فقدان للبيانات أو سوء استخدام أو وصول غير مصرح به ناتج عن أفعالك الخاصة.</p>
+        <p>يتضمن التطبيق ميزة العمل بدون إنترنت (Offline) التي تخزن البيانات مؤقتاً محلياً على جهازك. أنت مسؤول عن مزامنة بياناتك مع قاعدة بياناتنا على خوادم Supabase في أوروبا عند توفر اتصال بالإنترنت. نحن لسنا مسؤولين عن أي فقدان للبيانات إذا تم إلغاء تثبيت التطبيق أو مسح بيانات الجهاز قبل اكتمال المزامنة مع قاعدة بياناتنا على خوادم Supabase في أوروبا.</p>
+        <h2>5. الإعلانات</h2>
+        <p>قد يعرض التطبيق إعلانات (مثل اللافتات والإعلانات البينية) مقدمة من خدمات جهات خارجية.</p>
+        <h2>6. الملكية الفكرية</h2>
+        <p>التصميم والميزات والبرمجيات الأساسية للتطبيق هي ملكية حصرية للمطور ومحمية بموجب القوانين المعمول بها. ومع ذلك، يظل كل المحتوى الذي ينشئه المستخدم، بما في ذلك بيانات تربية النحل والمعلومات الشخصية وتفاصيل المناحل وبيانات الموقع، ملكية حصرية للمستخدم.</p>
+        <h2>7. توفر الخدمة</h2>
+        <p>نحن لا نضمن أن التطبيق سيكون متاحاً دائماً أو دون انقطاع أو خالياً من الأخطاء. قد تؤثر عمليات الصيانة أو التحديثات أو المشاكل الفنية على توفر الخدمة.</p>
+        <h2>8. إخلاء المسؤولية</h2>
+        <p>يتم توفير التطبيق "كما هو" (as is) دون أي ضمانات من أي نوع، سواء كانت صريحة أو ضمنية.</p>
+        <h2>9. تحديد المسؤولية</h2>
+        <p>لن نتحمل بأي حال من الأحوال المسؤولية عن الأضرار المباشرة أو غير المباشرة أو العرضية أو التبعية الناشئة عن استخدام أو عدم القدرة على استخدام التطبيق.</p>
+        <h2>10. الإنهاء</h2>
+        <p>نحتفظ بالحق في تعليق أو إنهاء وصولك إلى التطبيق في أي وقت في حال انتهاك هذه الشروط.</p>
+        <h2>11. القانون المعمول به والاختصاص القضائي</h2>
+        <p>تخضع هذه الشروط لقوانين المملكة المغربية. تخضع أي نزاعات ناشئة عن استخدام التطبيق للاختصاص الحصري للمحاكم المغربية.</p>
+        <h2>12. تعديلات الشروط</h2>
+        <p>قد نقوم بتحديث هذه الشروط من وقت لآخر. سيتم إبلاغك بالتغييرات داخل التطبيق أو بوسائل أخرى مناسبة.</p>
+        <h2>13. اتصل بنا</h2>
+        <p>المطور<br>البريد الإلكتروني: <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a></p>
+      `,
+      en: `
+        <h1>Hivelogbee Terms of Use</h1>
+        <p class="effective-date"><strong>Effective Date:</strong> May 2026</p>
+        <h2>1. Acceptance of Terms</h2>
+        <p>By using the Hivelogbee application, you agree to comply with these Terms of Use. If you do not agree with these terms, please do not use the application.</p>
+        <h2>2. Use of the Application</h2>
+        <p>You may use the application only for personal and lawful purposes. You must not use it for any illegal, harmful, or unauthorized activities.</p>
+        <h2>3. User Account</h2>
+        <p>You are responsible for maintaining the confidentiality of your login credentials and for all activities that occur under your account.</p>
+        <h2>4. User Content and Data Synchronization</h2>
+        <p>You are solely responsible for the data and content you enter into the application. We disclaim any liability for data loss, misuse, or unauthorized access resulting from your own actions.</p>
+        <p>The application includes an offline feature that temporarily stores data locally on your device. You are responsible for synchronizing your data with our database on Supabase servers in Europe when an internet connection is available. We are not responsible for any data loss if the application is uninstalled or device data is cleared before synchronization with our database on Supabase servers in Europe is complete.</p>
+        <h2>5. Advertising</h2>
+        <p>The application may display advertisements (such as banners and interstitial ads) provided by third-party services.</p>
+        <h2>6. Intellectual Property</h2>
+        <p>The design, features, and underlying software of the application are the exclusive property of the developer and are protected by applicable laws. However, all user-generated content, including beekeeping data, personal information, apiary details, and location data, remains the exclusive property of the user.</p>
+        <h2>7. Service Availability</h2>
+        <p>We do not guarantee that the application will
+         always be available, uninterrupted, or error-free. Maintenance, updates, or technical issues may affect service availability.</p>
+        <h2>8. Disclaimer</h2>
+        <p>The application is provided "as is" without any warranties of any kind, either express or implied.</p>
+        <h2>9. Limitation of Liability</h2>
+        <p>In no event shall we be liable for any direct, indirect, incidental, or consequential damages arising from the use or inability to use the application.</p>
+        <h2>10. Termination</h2>
+        <p>We reserve the right to suspend or terminate your access to the application at any time in the event of a violation of these Terms.</p>
+        <h2>11. Governing Law and Jurisdiction</h2>
+        <p>These Terms are governed by the laws of the Kingdom of Morocco. Any dispute arising from the use of the application shall be subject to the exclusive jurisdiction of the Moroccan courts.</p>
+        <h2>12. Changes to the Terms</h2>
+        <p>We may update these Terms from time to time. Changes will be communicated to you within the application or through other appropriate means.</p>
+        <h2>13. Contact</h2>
+        <p>Developer<br>Email: <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a></p>
+      `,
+      es: `
+        <h1>Términos de Uso de Hivelogbee</h1>
+        <p class="effective-date"><strong>Fecha de entrada en vigor:</strong> Mayo de 2026</p>
+        <h2>1. Aceptación de los Términos</h2>
+        <p>Al utilizar la aplicación Hivelogbee, usted acepta cumplir con estos Términos de Uso. Si no está de acuerdo con estos términos, no utilice la aplicación.</p>
+        <h2>2. Uso de la Aplicación</h2>
+        <p>Puede utilizar la aplicación únicamente para fines personales y legales. No debe utilizarla para actividades ilegales, dañinas o no autorizadas.</p>
+        <h2>3. Cuenta de Usuario</h2>
+        <p>Usted es responsable de mantener la confidencialidad de sus credenciales de inicio de sesión y de todas las actividades que ocurran bajo su cuenta.</p>
+        <h2>4. Contenido del Usuario y Sincronización de Datos</h2>
+        <p>Usted es el único responsable de los datos y el contenido que ingrese en la aplicación. Declinamos toda responsabilidad por la pérdida de datos, el mal uso o el acceso no autorizado que resulte de sus propias acciones.</p>
+        <p>La aplicación incluye una función sin conexión (Offline) que almacena temporalmente los datos localmente en su dispositivo. Usted es responsable de sincronizar sus datos con nuestra base de datos en los servidores de Supabase en Europa cuando haya una conexión a Internet disponible. No somos responsables de ninguna pérdida de datos si la aplicación se desinstala o si se borran los datos del dispositivo antes de que se complete la sincronización con nuestra base de datos en los servidores de Supabase en Europa.</p>
+        <h2>5. Publicidad</h2>
+        <p>La aplicación puede mostrar anuncios (como banners y anuncios intersticiales) proporcionados por servicios de terceros.</p>
+        <h2>6. Propiedad Intelectual</h2>
+        <p>El diseño, las características y el software subyacente de la aplicación son propiedad exclusiva del desarrollador y están protegidos por las leyes aplicables. Sin embargo, todo el contenido generado por el usuario, incluidos los datos apícolas, la información personal, los detalles de los apiarios y los datos de ubicación, sigue siendo propiedad exclusiva del usuario.</p>
+        <h2>7. Disponibilidad del Servicio</h2>
+        <p>No garantizamos que la aplicación esté siempre disponible, ininterrumpida o libre de errores. El mantenimiento, las actualizaciones o los problemas técnicos pueden afectar la disponibilidad del servicio.</p>
+        <h2>8. Descargo de Responsabilidad</h2>
+        <p>La aplicación se proporciona "tal cual" (as is) sin garantías de ningún tipo, ya sean expresas o implícitas.</p>
+        <h2>9. Limitación de Responsabilidad</h2>
+        <p>En ningún caso seremos responsables de los daños directos, indirectos, incidentales o consecuentes que surjan del uso o la imposibilidad de usar la aplicación.</p>
+        <h2>10. Terminación</h2>
+        <p>Nos reservamos el derecho de suspender o cancelar su acceso a la aplicación en cualquier momento en caso de violación de estos Términos.</p>
+        <h2>11. Ley Aplicable y Jurisdicción</h2>
+        <p>Estos Términos se rigen por las leyes del Reino de Marruecos. Cualquier disputa que surja del uso de la aplicación estará sujeta a la jurisdicción exclusiva de los tribunales marroquíes.</p>
+        <h2>12. Cambios en los Términos</h2>
+        <p>Podemos actualizar estos Términos de vez en cuando. Los cambios se le comunicarán dentro de la aplicación o por otros medios apropiados.</p>
+        <h2>13. Contacto</h2>
+        <p>Desarrollador<br>Correo electrónico: <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a></p>
+      `,
+      tr: `
+        <h1>Hivelogbee Kullanım Koşulları</h1>
+        <p class="effective-date"><strong>Yürürlük Tarihi:</strong> Mayıs 2026</p>
+        <h2>1. Koşulların Kabulü</h2>
+        <p>Hivelogbee uygulamasını kullanarak bu Kullanım Koşullarına uymayı kabul edersiniz. Bu koşulları kabul etmiyorsanız, lütfen uygulamayı kullanmayın.</p>
+        <h2>2. Uygulamanın Kullanımı</h2>
+        <p>Uygulamayı yalnızca kişisel ve yasal amaçlar için kullanabilirsiniz. Yasadışı, zararlı veya yetkisiz faaliyetler için kullanmamalısınız.</p>
+        <h2>3. Kullanıcı Hesabı</h2>
+        <p>Giriş bilgilerinizin gizliliğini korumaktan ve hesabınız altında gerçekleşen tüm faaliyetlerden siz sorumlusunuz.</p>
+        <h2>4. Kullanıcı İçeriği ve Veri Senkronizasyonu</h2>
+        <p>Uygulamaya girdiğiniz veri ve içeriklerden yalnızca siz sorumlusunuz. Kendi eylemlerinizden kaynaklanan veri kaybı, kötüye kullanım veya yetkisiz erişim için hiçbir sorumluluk kabul etmiyoruz.</p>
+        <p>Uygulama, verileri cihazınızda geçici olarak yerel olarak depolayan bir çevrimdışı (Offline) özellik içerir. İnternet bağlantısı mevcut olduğunda verilerinizi Supabase'in Avrupa'daki sunucularındaki veritabanımızla senkronize etmek sizin sorumluluğunuzdadır. Supabase'in Avrupa'daki sunucularındaki veritabanımızla senkronizasyon tamamlanmadan uygulama kaldırılırsa veya cihaz verileri temizlenirse herhangi bir veri kaybından sorumlu değiliz.</p>
+        <h2>5. Reklam</h2>
+        <p>Uygulama, üçüncü taraf hizmetler tarafından sağlanan reklamları (afişler ve geçiş reklamları gibi) gösterebilir.</p>
+        <h2>6. Fikri Mülkiyet</h2>
+        <p>Uygulamanın tasarımı, özellikleri ve temel yazılımı geliştiricinin münhasır mülkiyetindedir ve geçerli yasalarla korunmaktadır. Ancak, arıcılık verileri, kişisel bilgiler, arılık ayrıntıları ve konum verileri dahil olmak üzere kullanıcı tarafından oluşturulan tüm içerik kullanıcının münhasır mülkiyetinde kalır.</p>
+        <h2>7. Hizmet Kullanılabilirliği</h2>
+        <p>Uygulamanın her zaman kullanılabilir, kesintisiz veya hatasız olacağını garanti etmiyoruz. Bakım, güncellemeler veya teknik sorunlar hizmet kullanılabilirliğini etkileyebilir.</p>
+        <h2>8. Sorumluluk Reddi</h2>
+        <p>Uygulama, açık veya zımni hiçbir garanti olmaksızın "olduğu gibi" (as is) sağlanmaktadır.</p>
+        <h2>9. Sorumluluğun Sınırlandırılması</h2>
+        <p>Uygulamanın kullanımından veya kullanılamamasından kaynaklanan doğrudan, dolaylı, arızi veya sonuç olarak ortaya çıkan zararlardan hiçbir durumda sorumlu olmayacağız.</p>
+        <h2>10. Fesih</h2>
+        <p>Bu Koşulların ihlali durumunda uygulamaya erişiminizi istediğimiz zaman askıya alma veya sonlandırma hakkımızı saklı tutuyoruz.</p>
+        <h2>11. Geçerli Kanun ve Yargı Yetkisi</h2>
+        <p>Bu Koşullar Fas Krallığı yasalarına tabidir. Uygulamanın kullanımından kaynaklanan herhangi bir anlaşmazlık, Fas mahkemelerinin münhasır yargı yetkisine tabi olacaktır.</p>
+        <h2>12. Koşullardaki Değişiklikler</h2>
+        <p>Bu Koşulları zaman zaman güncelleyebiliriz. Değişiklikler size uygulama içinde veya diğer uygun yollarla iletilecektir.</p>
+        <h2>13. İletişim</h2>
+        <p>Geliştirici<br>E-posta: <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a></p>
+      `
+    };
+
+    function changeLanguage() {
+      const lang = document.getElementById('language-selector').value;
+      const container = document.getElementById('content-container');
+      const htmlTag = document.getElementById('html-tag');
+
+      container.innerHTML = translations[lang];
+
+      if (lang === 'ar') {
+        htmlTag.setAttribute('dir', 'rtl');
+        container.classList.add('rtl');
+      } else {
+        htmlTag.setAttribute('dir', 'ltr');
+        container.classList.remove('rtl');
+      }
+    }
+
+    // تنفيذ الدالة فور تحميل الصفحة
+    changeLanguage();
+</script>
+</body>
+</html>

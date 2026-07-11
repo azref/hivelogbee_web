@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr" id="html-tag">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de Confidentialité - Hivelogbee</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background-color: #f9f9f9; margin: 0; padding: 20px; transition: background-color 0.3s, color 0.3s; }
+        .header-bar { max-width: 800px; margin: 0 auto 20px auto; display: flex; justify-content: flex-end; }
+        select { padding: 8px 15px; font-size: 16px; border-radius: 8px; border: 1px solid #ccc; background-color: #fff; color: #333; cursor: pointer; outline: none; }
+        .container { max-width: 800px; margin: 0 auto; padding: 30px; background-color: #fff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: background-color 0.3s, box-shadow 0.3s; }
+        h1 { text-align: center; font-size: 26px; color: #222; margin-bottom: 10px; }
+        .effective-date { text-align: center; color: #666; margin-bottom: 30px; font-style: italic; }
+        h2 { font-size: 18px; color: #444; margin-top: 25px; border-bottom: 2px solid #f0f0f0; padding-bottom: 8px; }
+        h3 { font-size: 16px; color: #555; margin-top: 15px; }
+        p, li { margin-bottom: 10px; text-align: justify; }
+        ul { margin-top: 0; padding-left: 20px; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .rtl { direction: rtl; text-align: right; }
+        .rtl p, .rtl li { text-align: right; }
+        .rtl ul { padding-left: 0; padding-right: 20px; }
+        @media (prefers-color-scheme: dark) {
+          body { background-color: #121212; color: #e0e0e0; }
+          .container { background-color: #1e1e1e; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+          h1 { color: #ffffff; }
+          h2 { color: #dddddd; border-bottom: 2px solid #333; }
+          h3 { color: #cccccc; }
+          .effective-date { color: #aaaaaa; }
+          select { background-color: #333; color: #fff; border: 1px solid #555; }
+          a { color: #66b3ff; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header-bar">
+    <label for="language-selector"></label><select id="language-selector" onchange="changeLanguage()">
+        <option value="fr">Français</option>
+        <option value="ar">العربية</option>
+        <option value="en">English</option>
+        <option value="es">Español</option>
+        <option value="tr">Türkçe</option>
+    </select>
+</div>
+
+<div class="container" id="content-container"></div>
+
+<script>
+    const translations = {
+      fr: `
+        <h1>Politique de Confidentialité de Hivelogbee</h1>
+        <p class="effective-date"><strong>Date de prise d'effet :</strong> Mai 2026</p>
+        <h2>1. Identité du Responsable de Traitement</h2>
+        <p>Le développement et la gestion de ce traitement sont assurés par un développeur basé au Maroc.<br>Pour toute question, contactez : <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a></p>
+        <h2>2. Loi Applicable</h2>
+        <p>Régie par le droit marocain (Loi n° 09-08). Tout litige relèvera des tribunaux marocains.</p>
+        <h2>3. Données Collectées</h2>
+        <ul>
+          <li>Données apicoles (ruchers, ruches, inspections) et e-mail.</li>
+          <li><strong>Photos et Médias :</strong> Hivelogbee ne collecte, ne traite et ne stocke AUCUNE image ou média.</li>
+          <li><strong>Localisation :</strong> Uniquement lors de la création d'un rucher pour la météo. Non suivie en arrière-plan.</li>
+        </ul>
+        <h2>4. Stockage et Hébergement</h2>
+        <p>Données mises en cache localement (Offline-First) et hébergées via Supabase (serveurs en France, UE).</p>
+        <h2>5. Vos Droits et Suppression</h2>
+        <p>Vous pouvez supprimer définitivement votre compte et vos données via <strong>Paramètres > Compte > Supprimer le compte</strong> ou en nous contactant.</p>
+      `,
+      ar: `
+        <h1>سياسة الخصوصية لتطبيق Hivelogbee</h1>
+        <p class="effective-date"><strong>تاريخ السريان:</strong> مايو 2026</p>
+        <h2>1. هوية مسؤول معالجة البيانات</h2>
+        <p>يتم تطوير وإدارة هذا التطبيق من طرف مطور مقيم في المغرب.<br>للتواصل: <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a></p>
+        <h2>2. القانون المعمول به</h2>
+        <p>تخضع للقانون المغربي (القانون 09-08). وأي نزاع يخضع للمحاكم المغربية.</p>
+        <h2>3. البيانات المجمعة</h2>
+        <ul>
+          <li>بيانات المناحل والخلايا والفحوصات والبريد الإلكتروني.</li>
+          <li><strong>الصور والوسائط:</strong> التطبيق لا يجمع أو يخزن أي صور أو وسائط تحت أي ظرف.</li>
+          <li><strong>الموقع:</strong> يُطلب فقط عند تحديد موقع المنحل لجلب الطقس، ولا يتم تتبعه في الخلفية.</li>
+        </ul>
+        <h2>4. التخزين والاستضافة</h2>
+        <p>تُخزن البيانات محلياً (للعمل بدون إنترنت) وتُستضاف سحابياً عبر Supabase (خوادم في فرنسا).</p>
+        <h2>5. حقوقك وحذف البيانات</h2>
+        <p>يمكنك حذف حسابك وبياناتك نهائياً من <strong>الإعدادات > الحساب > حذف الحساب</strong> أو بمراسلتنا.</p>
+      `,
+      en: `
+        <h1>Hivelogbee Privacy Policy</h1>
+        <p class="effective-date"><strong>Effective Date:</strong> May 2026</p>
+        <h2>1. Data Controller</h2>
+        <p>This application is developed and managed by a developer based in Morocco.<br>For inquiries, contact: <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a></p>
+        <h2>2. Applicable Law</h2>
+        <p>Governed by Moroccan law (Law 09-08). Disputes are subject to Moroccan courts.</p>
+        <h2>3. Collected Data</h2>
+        <ul>
+          <li>Beekeeping data (apiaries, hives, inspections) and email.</li>
+          <li><strong>Photos/Media:</strong> Hivelogbee does NOT collect or store any images or media.</li>
+          <li><strong>Location:</strong> Only used when setting an apiary location for weather. Not tracked in background.</li>
+        </ul>
+        <h2>4. Storage and Hosting</h2>
+        <p>Data is cached locally (Offline-First) and hosted via Supabase (servers in France, EU).</p>
+        <h2>5. Your Rights & Deletion</h2>
+        <p>You can permanently delete your account and data via <strong>Settings > Account > Delete account</strong> or by contacting us.</p>
+      `,
+      es: `
+        <h1>Política de Privacidad de Hivelogbee</h1>
+        <p class="effective-date"><strong>Fecha de entrada:</strong> Mayo de 2026</p>
+        <h2>1. Responsable del Tratamiento</h2>
+        <p>El desarrollo y gestión de este tratamiento están a cargo de un desarrollador con sede en Marruecos.<br>Para cualquier consulta, contacte: <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a></p>
+        <h2>2. Ley Aplicable</h2>
+        <p>Regida por la ley marroquí (Ley 09-08). Las disputas están sujetas a los tribunales marroquíes.</p>
+        <h2>3. Datos Recopilados</h2>
+        <ul>
+          <li>Datos apícolas (apiarios, colmenas, inspecciones) y correo electrónico.</li>
+          <li><strong>Fotos y Medios:</strong> Hivelogbee NO recopila ni almacena imágenes ni medios.</li>
+          <li><strong>Ubicación:</strong> Solo se usa al establecer la ubicación del apiario para el clima. No se rastrea en segundo plano.</li>
+        </ul>
+        <h2>4. Almacenamiento y Alojamiento</h2>
+        <p>Los datos se almacenan en caché localmente (Offline-First) y se alojan a través de Supabase (servidores en Francia, UE).</p>
+        <h2>5. Sus Derechos y Eliminación</h2>
+        <p>Puede eliminar permanentemente su cuenta y datos a través de <strong>Configuración > Cuenta > Eliminar cuenta</strong> o contactándonos.</p>
+      `,
+      tr: `
+        <h1>Hivelogbee Gizlilik Politikası</h1>
+        <p class="effective-date"><strong>Yürürlük Tarihi:</strong> Mayıs 2026</p>
+        <h2>1. Veri Sorumlusu</h2>
+        <p>Bu uygulamanın geliştirilmesi ve yönetimi, Fas merkezli bir geliştirici tarafından yürütülmektedir.<br>İletişim için: <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a></p>
+        <h2>2. Geçerli Kanun</h2>
+        <p>Fas yasalarına (Kanun 09-08) tabidir. Anlaşmazlıklar Fas mahkemelerine tabidir.</p>
+        <h2>3. Toplanan Veriler</h2>
+        <ul>
+          <li>Arıcılık verileri (arılıklar, kovanlar, denetimler) ve e-posta.</li>
+          <li><strong>Fotoğraflar/Medya:</strong> Hivelogbee HİÇBİR görüntü veya medyayı toplamaz veya saklamaz.</li>
+          <li><strong>Konum:</strong> Yalnızca hava durumu için arılık konumu ayarlanırken kullanılır. Arka planda izlenmez.</li>
+        </ul>
+        <h2>4. Depolama ve Barındırma</h2>
+        <p>Veriler yerel olarak önbelleğe alınır (Çevrimdışı Öncelikli) ve Supabase (Fransa, AB'deki sunucular) aracılığıyla barındırılır.</p>
+        <h2>5. Haklarınız ve Silme</h2>
+        <p>Hesabınızı ve verilerinizi <strong>Ayarlar > Hesap > Hesabı sil</strong> bölümünden veya bizimle iletişime geçerek kalıcı olarak silebilirsiniz.</p>
+      `
+    };
+
+    function changeLanguage() {
+      const lang = document.getElementById('language-selector').value;
+      const container = document.getElementById('content-container');
+      const htmlTag = document.getElementById('html-tag');
+
+      container.innerHTML = translations[lang];
+
+      if (lang === 'ar') {
+        htmlTag.setAttribute('dir', 'rtl');
+        container.classList.add('rtl');
+      } else {
+        htmlTag.setAttribute('dir', 'ltr');
+        container.classList.remove('rtl');
+      }
+    }
+
+    // تنفيذ الدالة فور تحميل الصفحة
+    changeLanguage();
+</script>
+</body>
+</html>

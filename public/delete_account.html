@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr" id="html-tag">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suppression de Compte - Hivelogbee</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background-color: #f9f9f9; margin: 0; padding: 20px; transition: background-color 0.3s, color 0.3s; }
+        .header-bar { max-width: 800px; margin: 0 auto 20px auto; display: flex; justify-content: flex-end; }
+        select { padding: 8px 15px; font-size: 16px; border-radius: 8px; border: 1px solid #ccc; background-color: #fff; color: #333; cursor: pointer; outline: none; }
+        .container { max-width: 800px; margin: 0 auto; padding: 30px; background-color: #fff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: background-color 0.3s, box-shadow 0.3s; }
+        h1 { text-align: center; font-size: 26px; color: #222; margin-bottom: 20px; }
+        h2 { font-size: 18px; color: #444; margin-top: 25px; border-bottom: 2px solid #f0f0f0; padding-bottom: 8px; }
+        p, li { margin-bottom: 10px; text-align: justify; }
+        ul { margin-top: 0; padding-left: 20px; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* تنسيق المربعات التحذيرية */
+        .warning { background-color: #fff3f3; border-left: 4px solid #dc3545; padding: 15px; margin-bottom: 15px; border-radius: 0 8px 8px 0; transition: background-color 0.3s, border-color 0.3s; }
+        .success-box { background-color: #f0fdf4; border-left: 4px solid #28a745; padding: 15px; margin-bottom: 15px; border-radius: 0 8px 8px 0; transition: background-color 0.3s, border-color 0.3s; }
+
+        /* دعم اللغة العربية (RTL) */
+        .rtl { direction: rtl; text-align: right; }
+        .rtl p, .rtl li { text-align: right; }
+        .rtl ul { padding-left: 0; padding-right: 20px; }
+        .rtl .warning, .rtl .success-box { border-left: none; border-right: 4px solid; border-radius: 8px 0 0 8px; }
+        .rtl .warning { border-right-color: #dc3545; }
+        .rtl .success-box { border-right-color: #28a745; }
+
+        /* الوضع الليلي التلقائي (Dark Mode) */
+        @media (prefers-color-scheme: dark) {
+          body { background-color: #121212; color: #e0e0e0; }
+          .container { background-color: #1e1e1e; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+          h1 { color: #ffffff; }
+          h2 { color: #dddddd; border-bottom: 2px solid #333; }
+          select { background-color: #333; color: #fff; border: 1px solid #555; }
+          a { color: #66b3ff; }
+          .warning { background-color: #3b1a1a; border-left-color: #ff4d4d; }
+          .success-box { background-color: #1a3320; border-left-color: #4caf50; }
+          .rtl .warning { border-right-color: #ff4d4d; }
+          .rtl .success-box { border-right-color: #4caf50; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header-bar">
+    <select id="language-selector" onchange="changeLanguage()">
+        <option value="fr">Français</option>
+        <option value="ar">العربية</option>
+        <option value="en">English</option>
+        <option value="es">Español</option>
+        <option value="tr">Türkçe</option>
+    </select>
+</div>
+
+<div class="container" id="content-container"></div>
+
+<script>
+    const translations = {
+      fr: `
+        <h1>Suppression du Compte et des Données</h1><p>Si vous souhaitez supprimer votre compte Hivelogbee et toutes les données associées, vous pouvez le faire facilement. Nous traitons ces demandes conformément aux politiques de sécurité des données de Google Play et aux lois applicables en matière de protection des données (notamment la Loi 09-08).</p><h2>Méthode 1 : Suppression depuis l'application (Recommandée)</h2><p>Le moyen le plus rapide et le plus simple de supprimer votre compte est de le faire directement via l'application Hivelogbee :</p><ul><li>Ouvrez l'application Hivelogbee et connectez-vous.</li><li>Accédez aux <strong>Paramètres</strong>, puis faites défiler jusqu'à la section <strong>Compte</strong>.</li><li>Appuyez sur <strong>Supprimer le compte définitivement</strong>.</li><li>Une boîte de dialogue de confirmation apparaîtra. Il vous sera demandé de saisir un mot de confirmation (par exemple, "SUPPRIMER" ou "حذف") pour éviter toute suppression accidentelle.</li></ul><p><em>Remarque : Lorsque vous utilisez cette méthode, une fonction cloud sécurisée est déclenchée, effaçant instantanément et automatiquement toutes vos données de notre base de données.</em></p><h2>Méthode 2 : Demande de suppression par e-mail</h2><p>Si vous avez déjà désinstallé l'application et que vous ne pouvez plus accéder à votre compte, vous pouvez demander la suppression de vos données par e-mail :</p><ul><li><strong>Envoyez un e-mail à :</strong> <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a></li><li><strong>Objet de l'e-mail :</strong> Demande de suppression de compte</li><li><strong>Important :</strong> Vous devez envoyer cet e-mail à partir de l'adresse e-mail exacte qui est enregistrée avec votre compte Hivelogbee afin de vérifier votre identité.</li></ul><p>Les demandes par e-mail seront traitées dans un délai de 7 à 14 jours ouvrables.</p><h2>Politique de conservation du Responsable de Traitement</h2><div class="success-box"><p><strong>Zéro conservation des données :</strong> Une fois le processus de suppression exécuté (que ce soit via la fonction cloud intégrée à l'application ou manuellement par nos soins), le Responsable de Traitement <strong>ne conserve aucune de vos données</strong>. Toutes les informations personnelles, les registres apicoles, les emplacements des ruchers et les sauvegardes sont effacés de manière permanente et irréversible des serveurs Supabase en Europe.</p></div><div class="warning"><p><strong>Avertissement : Cette action est définitive et irréversible.</strong></p><p>Une fois votre compte supprimé, vous perdrez l'accès à tous vos ruchers, ruches, inspections et notes. Veuillez vous assurer d'exporter toutes les données dont vous avez besoin avant de procéder.</p></div><h2>Nous Contacter</h2><p>Si vous avez des questions concernant ce processus, veuillez nous contacter à <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a>.</p>
+      `,
+      ar: `
+        <h1>حذف الحساب والبيانات</h1><p>إذا كنت ترغب في حذف حساب Hivelogbee الخاص بك وجميع البيانات المرتبطة به، يمكنك القيام بذلك بسهولة. نحن نتعامل مع هذه الطلبات وفقاً لسياسات أمان بيانات Google Play وقوانين حماية البيانات المعمول بها (بما في ذلك القانون 09-08).</p><h2>الطريقة الأولى: الحذف من داخل التطبيق (موصى به)</h2><p>أسرع وأسهل طريقة لحذف حسابك هي القيام بذلك مباشرة عبر تطبيق Hivelogbee:</p><ul><li>افتح تطبيق Hivelogbee وقم بتسجيل الدخول.</li><li>انتقل إلى <strong>الإعدادات</strong>، ثم قم بالتمرير لأسفل إلى قسم <strong>الحساب</strong>.</li><li>اضغط على <strong>حذف الحساب نهائياً</strong>.</li><li>سيظهر مربع حوار للتأكيد. سيُطلب منك إدخال كلمة تأكيد (مثل "حذف" أو "DELETE") لمنع الحذف العرضي.</li></ul><p><em>ملاحظة: عند استخدام هذه الطريقة، يتم تشغيل وظيفة سحابية آمنة، مما يؤدي إلى مسح جميع بياناتك فوراً وتلقائياً من قاعدة بياناتنا.</em></p><h2>الطريقة الثانية: طلب الحذف عبر البريد الإلكتروني</h2><p>إذا كنت قد ألغيت تثبيت التطبيق بالفعل ولا يمكنك الوصول إلى حسابك، يمكنك طلب حذف بياناتك عبر البريد الإلكتروني:</p><ul><li><strong>أرسل بريداً إلكترونياً إلى:</strong> <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a></li><li><strong>موضوع البريد الإلكتروني:</strong> طلب حذف حساب</li><li><strong>هام:</strong> يجب إرسال هذا البريد الإلكتروني من نفس العنوان المسجل به حساب Hivelogbee الخاص بك للتحقق من هويتك.</li></ul><p>ستتم معالجة طلبات البريد الإلكتروني في غضون 7 إلى 14 يوم عمل.</p><h2>سياسة الاحتفاظ بالبيانات الخاصة بمسؤول المعالجة</h2><div class="success-box"><p><strong>عدم الاحتفاظ بالبيانات:</strong> بمجرد تنفيذ عملية الحذف (سواء عبر الوظيفة السحابية المدمجة أو يدوياً من قبلنا)، فإن مسؤول المعالجة <strong>لا يحتفظ بأي من بياناتك</strong>. يتم مسح جميع المعلومات الشخصية وسجلات المناحل والمواقع والنسخ الاحتياطية بشكل دائم ولا رجعة فيه من خوادم Supabase في أوروبا.</p></div><div class="warning"><p><strong>تحذير: هذا الإجراء نهائي ولا يمكن التراجع عنه.</strong></p><p>بمجرد حذف حسابك، ستفقد الوصول إلى جميع مناحلك وخلاياك وفحوصاتك وملاحظاتك. يرجى التأكد من تصدير أي بيانات تحتاجها قبل المتابعة.</p></div><h2>اتصل بنا</h2><p>إذا كانت لديك أي أسئلة بخصوص هذه العملية، يرجى الاتصال بنا على <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a>.</p>
+      `,
+      en: `
+        <h1>Account and Data Deletion</h1><p>If you wish to delete your Hivelogbee account and all associated data, you can do so easily. We process these requests in accordance with Google Play's data safety policies and applicable data protection laws (including Law 09-08).</p><h2>Method 1: In-App Deletion (Recommended)</h2><p>The fastest and easiest way to delete your account is directly through the Hivelogbee app:</p><ul><li>Open the Hivelogbee app and log in.</li><li>Go to <strong>Settings</strong>, then scroll down to the <strong>Account</strong> section.</li><li>Tap on <strong>Delete account permanently</strong>.</li><li>A confirmation dialog will appear. You will be asked to type a confirmation word (e.g., "DELETE" or "حذف") to prevent accidental deletion.</li></ul><p><em>Note: When using this method, a secure cloud function is triggered, instantly and automatically erasing all your data from our database.</em></p><h2>Method 2: Email Deletion Request</h2><p>If you have already uninstalled the app and cannot access your account, you can request data deletion via email:</p><ul><li><strong>Send an email to:</strong> <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a></li><li><strong>Email Subject:</strong> Account Deletion Request</li><li><strong>Important:</strong> You must send this email from the exact email address registered with your Hivelogbee account to verify your identity.</li></ul><p>Email requests will be processed within 7 to 14 business days.</p><h2>Data Controller Retention Policy</h2><div class="success-box"><p><strong>Zero Data Retention:</strong> Once the deletion process is executed (whether via the in-app cloud function or manually by us), the Data Controller <strong>retains none of your data</strong>. All personal information, apiary logs, locations, and backups are permanently and irreversibly erased from Supabase servers in Europe.</p></div><div class="warning"><p><strong>Warning: This action is final and irreversible.</strong></p><p>Once your account is deleted, you will lose access to all your apiaries, hives, inspections, and notes. Please ensure you export any data you need before proceeding.</p></div><h2>Contact Us</h2><p>If you have any questions regarding this process, please contact us at <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a>.</p>
+      `,
+      es: `
+        <h1>Eliminación de Cuenta y Datos</h1><p>Si desea eliminar su cuenta de Hivelogbee y todos los datos asociados, puede hacerlo fácilmente. Procesamos estas solicitudes de acuerdo con las políticas de seguridad de datos de Google Play y las leyes de protección de datos aplicables (incluida la Ley 09-08).</p><h2>Método 1: Eliminación desde la aplicación (Recomendado)</h2><p>La forma más rápida y sencilla de eliminar su cuenta es directamente a través de la aplicación Hivelogbee:</p><ul><li>Abra la aplicación Hivelogbee e inicie sesión.</li><li>Vaya a <strong>Configuración</strong>, luego desplácese hacia abajo hasta la sección <strong>Cuenta</strong>.</li><li>Toque en <strong>Eliminar cuenta permanentemente</strong>.</li><li>Aparecerá un cuadro de diálogo de confirmación. Se le pedirá que escriba una palabra de confirmación (por ejemplo, "ELIMINAR" o "DELETE") para evitar la eliminación accidental.</li></ul><p><em>Nota: Al usar este método, se activa una función segura en la nube, borrando instantánea y automáticamente todos sus datos de nuestra base de datos.</em></p><h2>Método 2: Solicitud de eliminación por correo electrónico</h2><p>Si ya ha desinstalado la aplicación y no puede acceder a su cuenta, puede solicitar la eliminación de datos por correo electrónico:</p><ul><li><strong>Envíe un correo electrónico a:</strong> <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a></li><li><strong>Asunto del correo:</strong> Solicitud de eliminación de cuenta</li><li><strong>Importante:</strong> Debe enviar este correo electrónico desde la dirección exacta registrada con su cuenta de Hivelogbee para verificar su identidad.</li></ul><p>Las solicitudes por correo electrónico se procesarán en un plazo de 7 a 14 días hábiles.</p><h2>Política de retención del Responsable del Tratamiento</h2><div class="success-box"><p><strong>Cero retención de datos:</strong> Una vez que se ejecuta el proceso de eliminación (ya sea a través de la función en la nube de la aplicación o manualmente por nosotros), el Responsable del Tratamiento <strong>no retiene ninguno de sus datos</strong>. Toda la información personal, registros de apiarios, ubicaciones y copias de seguridad se borran de forma permanente e irreversible de los servidores de Supabase en Europa.</p></div><div class="warning"><p><strong>Advertencia: Esta acción es definitiva e irreversible.</strong></p><p>Una vez que se elimine su cuenta, perderá el acceso a todos sus apiarios, colmenas, inspecciones y notas. Asegúrese de exportar cualquier dato que necesite antes de continuar.</p></div><h2>Contáctenos</h2><p>Si tiene alguna pregunta sobre este proceso, contáctenos en <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a>.</p>
+      `,
+      tr: `
+        <h1>Hesap ve Veri Silme</h1><p>Hivelogbee hesabınızı ve ilişkili tüm verileri silmek isterseniz, bunu kolayca yapabilirsiniz. Bu talepleri Google Play'in veri güvenliği politikalarına ve geçerli veri koruma yasalarına (Kanun 09-08 dahil) uygun olarak işliyoruz.</p><h2>Yöntem 1: Uygulama İçi Silme (Önerilen)</h2><p>Hesabınızı silmenin en hızlı ve en kolay yolu doğrudan Hivelogbee uygulamasıdır:</p><ul><li>Hivelogbee uygulamasını açın ve giriş yapın.</li><li><strong>Ayarlar</strong>'a gidin, ardından <strong>Hesap</strong> bölümüne kaydırın.</li><li><strong>Hesabı kalıcı olarak sil</strong>'e dokunun.</li><li>Bir onay iletişim kutusu görünecektir. Yanlışlıkla silmeyi önlemek için bir onay kelimesi (ör. "SİL" veya "DELETE") yazmanız istenecektir.</li></ul><p><em>Not: Bu yöntemi kullandığınızda, güvenli bir bulut işlevi tetiklenir ve tüm verileriniz veritabanımızdan anında ve otomatik olarak silinir.</em></p><h2>Yöntem 2: E-posta ile Silme Talebi</h2><p>Uygulamayı zaten kaldırdıysanız ve hesabınıza erişemiyorsanız, e-posta yoluyla veri silme talebinde bulunabilirsiniz:</p><ul><li><strong>Şu adrese e-posta gönderin:</strong> <a
+  href="mailto:awrghise@gmail.com">awrghise@gmail.com</a></li><li><strong>E-posta Konusu:</strong> Hesap Silme Talebi</li><li><strong>Önemli:</strong> Kimliğinizi doğrulamak için bu e-postayı Hivelogbee hesabınıza kayıtlı tam e-posta adresinden göndermelisiniz.</li></ul><p>E-posta talepleri 7 ila 14 iş günü içinde işleme alınacaktır.</p><h2>Veri Sorumlusu Saklama Politikası</h2><div class="success-box"><p><strong>Sıfır Veri Saklama:</strong> Silme işlemi gerçekleştirildiğinde (ister uygulama içi bulut işlevi aracılığıyla ister tarafımızca manuel olarak), Veri Sorumlusu <strong>verilerinizin hiçbirini saklamaz</strong>. Tüm kişisel bilgiler, arılık kayıtları, konumlar ve yedeklemeler Supabase'in Avrupa'daki sunucularından kalıcı ve geri döndürülemez bir şekilde silinir.</p></div><div class="warning"><p><strong>Uyarı: Bu işlem nihaidir ve geri alınamaz.</strong></p><p>Hesabınız silindiğinde tüm arılıklarınıza, kovanlarınıza, denetimlerinize ve notlarınıza erişiminizi kaybedersiniz. Lütfen devam etmeden önce ihtiyacınız olan verileri dışa aktardığınızdan emin olun.</p></div><h2>Bize Ulaşın</h2><p>Bu süreçle ilgili herhangi bir sorunuz varsa, lütfen <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a> adresinden bizimle iletişime geçin.</p>
+      `
+    };
+
+    function changeLanguage() {
+      const lang = document.getElementById('language-selector').value;
+      const container = document.getElementById('content-container');
+      const htmlTag = document.getElementById('html-tag');
+
+      container.innerHTML = translations[lang];
+
+      if (lang === 'ar') {
+        htmlTag.setAttribute('dir', 'rtl');
+        container.classList.add('rtl');
+      } else {
+        htmlTag.setAttribute('dir', 'ltr');
+        container.classList.remove('rtl');
+      }
+    }
+
+    // تنفيذ الدالة فور تحميل الصفحة
+    changeLanguage();
+</script>
+</body>
+</html>
