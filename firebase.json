@@ -1,10 +1,10 @@
 {
   "hosting": {
+    "site": "hivelog-legal",
     "public": "public",
     "ignore": [
       "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
+      "**/.*"
     ]
   }
 }
