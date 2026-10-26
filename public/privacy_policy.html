@@ -50,93 +50,427 @@
     const translations = {
       fr: `
         <h1>Politique de Confidentialité de Hivelogbee</h1>
-        <p class="effective-date"><strong>Date de prise d'effet :</strong> Mai 2026</p>
+        <p class="effective-date"><strong>Date d'entrée en vigueur :</strong> 26 octobre 2026 — Version 1.0</p>
+
         <h2>1. Identité du Responsable de Traitement</h2>
-        <p>Le développement et la gestion de ce traitement sont assurés par un développeur basé au Maroc.<br>Pour toute question, contactez : <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a></p>
+        <p>Le développement et la gestion de l'application Hivelogbee sont assurés par un développeur établi au Maroc.<br>Pour toute question relative à vos données : <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a></p>
+
         <h2>2. Loi Applicable</h2>
-        <p>Régie par le droit marocain (Loi n° 09-08). Tout litige relèvera des tribunaux marocains.</p>
+        <p>Le traitement est régi par le droit marocain (Loi n° 09-08 relative à la protection des données à caractère personnel).</p>
+        <p>Si vous résidez dans l'Espace économique européen, au Royaume-Uni ou en Suisse, le RGPD, le UK GDPR ou la LPD suisse s'appliquent également, sans préjudice des droits que vous confère votre législation locale.</p>
+
         <h2>3. Données Collectées</h2>
         <ul>
-          <li>Données apicoles (ruchers, ruches, inspections) et e-mail.</li>
-          <li><strong>Photos et Médias :</strong> Hivelogbee ne collecte, ne traite et ne stocke AUCUNE image ou média.</li>
-          <li><strong>Localisation :</strong> Uniquement lors de la création d'un rucher pour la météo. Non suivie en arrière-plan.</li>
+          <li><strong>Données de compte :</strong> adresse e-mail, identifiant, langue et préférences.</li>
+          <li><strong>Données apicoles :</strong> ruchers, ruches, inspections, traitements, productions, rappels et notes que vous saisissez.</li>
+          <li><strong>Localisation :</strong> uniquement lors de la création ou de la modification d'un rucher, pour les prévisions météo. Elle n'est pas suivie en arrière-plan et n'est pas utilisée à des fins publicitaires.</li>
+          <li><strong>Notifications :</strong> jeton de notification (FCM), fuseau horaire et langue, pour vous envoyer les rappels et alertes activés.</li>
+          <li><strong>Données techniques :</strong> modèle d'appareil, version du système, version de l'application et rapports de plantage (Firebase Crashlytics), afin de corriger les erreurs.</li>
+          <li><strong>Publicité :</strong> Google AdMob peut collecter l'identifiant publicitaire, l'adresse IP approximative et des données d'interaction avec les annonces. Les annonces personnalisées ne sont affichées qu'avec votre consentement lorsque la loi l'exige.</li>
+          <li><strong>Photos et médias :</strong> l'application ne collecte, ne traite et ne stocke aucune image, vidéo ou fichier multimédia.</li>
         </ul>
-        <h2>4. Stockage et Hébergement</h2>
-        <p>Données mises en cache localement (Offline-First) et hébergées via Supabase (serveurs en France, UE).</p>
-        <h2>5. Vos Droits et Suppression</h2>
-        <p>Vous pouvez supprimer définitivement votre compte et vos données via <strong>Paramètres > Compte > Supprimer le compte</strong> ou en nous contactant.</p>
+
+        <h2>4. Finalités et Bases Légales</h2>
+        <ul>
+          <li><strong>Fourniture du service :</strong> enregistrer et synchroniser vos données apicoles (exécution du contrat).</li>
+          <li><strong>Sauvegarde et synchronisation :</strong> conserver vos données sur nos serveurs et les restaurer sur un autre appareil (exécution du contrat).</li>
+          <li><strong>Notifications :</strong> rappels, alertes météo et messages que vous avez activés (consentement ou contrat).</li>
+          <li><strong>Publicité :</strong> afficher des annonces (consentement pour les annonces personnalisées ; intérêt légitime pour les annonces non personnalisées lorsque la loi le permet).</li>
+          <li><strong>Sécurité et amélioration :</strong> prévenir les abus et améliorer la stabilité de l'application (intérêt légitime).</li>
+        </ul>
+
+        <h2>5. Stockage et Hébergement</h2>
+        <p>Vos données sont d'abord enregistrées localement sur votre appareil (fonctionnement hors ligne), puis synchronisées avec Supabase, hébergé sur des serveurs situés dans l'Union européenne (France). Les communications sont chiffrées (TLS) et l'accès aux données est limité au propriétaire du compte par des règles de sécurité côté serveur.</p>
+
+        <h2>6. Destinataires et Partage</h2>
+        <p>Vos données ne sont jamais vendues. Elles peuvent être traitées par les prestataires suivants, uniquement pour les finalités décrites :</p>
+        <ul>
+          <li><strong>Supabase :</strong> hébergement, authentification et synchronisation.</li>
+          <li><strong>Google AdMob :</strong> diffusion des annonces et gestion du consentement.</li>
+          <li><strong>Firebase Cloud Messaging et Crashlytics :</strong> notifications push et rapports de plantage.</li>
+          <li><strong>OpenWeather :</strong> prévisions météo, à partir des coordonnées du rucher concerné.</li>
+        </ul>
+        <p>Certains prestataires peuvent traiter des données en dehors du Maroc ou de l'Union européenne. Ces transferts sont encadrés par les garanties appropriées prévues par la réglementation applicable.</p>
+
+        <h2>7. Publicité et Consentement</h2>
+        <p>L'application est gratuite et financée par la publicité fournie par Google AdMob. Si vous vous trouvez dans l'Espace économique européen, au Royaume-Uni ou en Suisse, une fenêtre de consentement Google s'affiche avant toute annonce personnalisée. Vous pouvez accepter, refuser ou gérer vos choix.</p>
+        <p>Vous pouvez modifier ou retirer votre consentement à tout moment depuis : <strong>Paramètres → Confidentialité des annonces</strong>.</p>
+        <p>Si vous refusez les annonces personnalisées, des annonces non personnalisées peuvent encore être affichées lorsque la loi le permet. Si vous refusez toute publicité, certaines fonctionnalités financées par la publicité peuvent ne plus être disponibles.</p>
+
+        <h2>8. Durée de Conservation</h2>
+        <ul>
+          <li><strong>Compte et données apicoles :</strong> jusqu'à la suppression de votre compte, puis suppression définitive.</li>
+          <li><strong>Sauvegardes :</strong> jusqu'à 30 jours après la suppression, le temps que les sauvegardes techniques soient purgées.</li>
+          <li><strong>Journaux techniques et rapports de plantage :</strong> jusqu'à 90 jours.</li>
+          <li><strong>Données publicitaires :</strong> selon les durées définies par Google.</li>
+        </ul>
+
+        <h2>9. Sécurité</h2>
+        <p>Nous mettons en œuvre des mesures techniques et organisationnelles raisonnables : chiffrement des communications, contrôle d'accès, isolation des données par compte et authentification sécurisée. Aucun système n'étant parfaitement sûr, utilisez un mot de passe unique et robuste.</p>
+
+        <h2>10. Vos Droits</h2>
+        <p>Selon votre législation, vous disposez des droits suivants :</p>
+        <ul>
+          <li><strong>Accès :</strong> savoir quelles données sont traitées.</li>
+          <li><strong>Rectification :</strong> corriger des données inexactes.</li>
+          <li><strong>Effacement :</strong> supprimer votre compte et vos données.</li>
+          <li><strong>Limitation et opposition :</strong> limiter ou contester certains traitements.</li>
+          <li><strong>Portabilité :</strong> recevoir vos données dans un format lisible.</li>
+          <li><strong>Retrait du consentement :</strong> à tout moment, notamment pour la publicité personnalisée.</li>
+        </ul>
+        <p>Pour exercer ces droits : <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a>. Vous pouvez aussi introduire une réclamation auprès de la CNDP au Maroc ou de l'autorité de protection des données de votre pays de résidence.</p>
+
+        <h2>11. Suppression du Compte</h2>
+        <p>Vous pouvez supprimer définitivement votre compte et vos données depuis l'application : <strong>Paramètres → Compte → Supprimer le compte</strong>, ou en nous contactant à <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a>. La suppression entraîne l'effacement de vos données apicoles et de votre profil, sous réserve des obligations légales de conservation et du délai de purge des sauvegardes.</p>
+
+        <h2>12. Enfants</h2>
+        <p>L'application n'est pas destinée aux enfants de moins de 13 ans (ou de moins de 16 ans dans l'Espace économique européen). Nous ne collectons pas sciemment de données concernant des enfants. Si vous pensez qu'un enfant nous a fourni des données, contactez-nous pour les supprimer.</p>
+
+        <h2>13. Modifications de cette Politique</h2>
+        <p>Nous pouvons mettre à jour cette politique pour refléter des changements légaux ou techniques. La nouvelle version est publiée à cette adresse avec une nouvelle date d'entrée en vigueur. En cas de changement important, une notification peut être affichée dans l'application.</p>
+
+        <h2>14. Contact</h2>
+        <p>Pour toute question, réclamation ou demande relative à vos données :<br>E-mail : <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a><br>Responsable : développeur d'Hivelogbee, Maroc.</p>
       `,
+
       ar: `
         <h1>سياسة الخصوصية لتطبيق Hivelogbee</h1>
-        <p class="effective-date"><strong>تاريخ السريان:</strong> مايو 2026</p>
+        <p class="effective-date"><strong>تاريخ السريان:</strong> 26 أكتوبر 2026 — الإصدار 1.0</p>
+
         <h2>1. هوية مسؤول معالجة البيانات</h2>
-        <p>يتم تطوير وإدارة هذا التطبيق من طرف مطور مقيم في المغرب.<br>للتواصل: <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a></p>
+        <p>يتم تطوير وإدارة تطبيق Hivelogbee من طرف مطور مقيم في المغرب.<br>للتواصل بخصوص بياناتك: <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a></p>
+
         <h2>2. القانون المعمول به</h2>
-        <p>تخضع للقانون المغربي (القانون 09-08). وأي نزاع يخضع للمحاكم المغربية.</p>
+        <p>تخضع المعالجة للقانون المغربي (القانون رقم 09-08 المتعلق بحماية الأشخاص الذاتيين تجاه معالجة المعطيات ذات الطابع الشخصي).</p>
+        <p>إذا كنت مقيماً في المنطقة الاقتصادية الأوروبية أو المملكة المتحدة أو سويسرا، تنطبق أيضاً قواعد GDPR أو UK GDPR أو قانون حماية البيانات السويسري، دون المساس بحقوقك بموجب قانون بلد إقامتك.</p>
+
         <h2>3. البيانات المجمعة</h2>
         <ul>
-          <li>بيانات المناحل والخلايا والفحوصات والبريد الإلكتروني.</li>
-          <li><strong>الصور والوسائط:</strong> التطبيق لا يجمع أو يخزن أي صور أو وسائط تحت أي ظرف.</li>
-          <li><strong>الموقع:</strong> يُطلب فقط عند تحديد موقع المنحل لجلب الطقس، ولا يتم تتبعه في الخلفية.</li>
+          <li><strong>بيانات الحساب:</strong> البريد الإلكتروني، المعرّف، اللغة والتفضيلات.</li>
+          <li><strong>بيانات تربية النحل:</strong> المناحل والخلايا والفحوصات والعلاجات والإنتاج والتذكيرات والملاحظات التي تُدخلها.</li>
+          <li><strong>الموقع:</strong> يُطلب فقط عند إنشاء منحل أو تعديل موقعه لجلب توقعات الطقس. لا يُتتبع في الخلفية ولا يُستخدم لأغراض إعلانية.</li>
+          <li><strong>الإشعارات:</strong> رمز الإشعارات (FCM)، المنطقة الزمنية واللغة، لإرسال التذكيرات والتنبيهات التي فعّلتها.</li>
+          <li><strong>البيانات التقنية:</strong> طراز الجهاز، إصدار النظام، إصدار التطبيق وتقارير الأعطال (Firebase Crashlytics) لتصحيح الأخطاء.</li>
+          <li><strong>الإعلانات:</strong> قد تجمع Google AdMob معرّف الإعلان وعنوان IP التقريبي وبيانات التفاعل مع الإعلانات. لا تُعرض الإعلانات المخصصة إلا بموافقتك عندما يقتضي القانون ذلك.</li>
+          <li><strong>الصور والوسائط:</strong> التطبيق لا يجمع ولا يعالج ولا يخزّن أي صور أو فيديوهات أو ملفات وسائط.</li>
         </ul>
-        <h2>4. التخزين والاستضافة</h2>
-        <p>تُخزن البيانات محلياً (للعمل بدون إنترنت) وتُستضاف سحابياً عبر Supabase (خوادم في فرنسا).</p>
-        <h2>5. حقوقك وحذف البيانات</h2>
-        <p>يمكنك حذف حسابك وبياناتك نهائياً من <strong>الإعدادات > الحساب > حذف الحساب</strong> أو بمراسلتنا.</p>
+
+        <h2>4. الأغراض والأسس القانونية</h2>
+        <ul>
+          <li><strong>تقديم الخدمة:</strong> حفظ ومزامنة بيانات تربية النحل (تنفيذ العقد).</li>
+          <li><strong>النسخ الاحتياطي والمزامنة:</strong> حفظ بياناتك على خوادمنا واستعادتها على جهاز آخر (تنفيذ العقد).</li>
+          <li><strong>الإشعارات:</strong> التذكيرات وتنبيهات الطقس والرسائل التي فعّلتها (الموافقة أو تنفيذ العقد).</li>
+          <li><strong>الإعلانات:</strong> عرض الإعلانات (الموافقة للإعلانات المخصصة؛ المصلحة المشروعة للإعلانات غير المخصصة حيث يسمح القانون).</li>
+          <li><strong>الأمان والتحسين:</strong> منع إساءة الاستخدام وتحسين استقرار التطبيق (مصلحة مشروعة).</li>
+        </ul>
+
+        <h2>5. التخزين والاستضافة</h2>
+        <p>تُحفظ بياناتك أولاً محلياً على جهازك (للعمل دون إنترنت)، ثم تُزامن مع Supabase المستضاف على خوادم في الاتحاد الأوروبي (فرنسا). الاتصالات مشفّرة (TLS)، والوصول إلى البيانات مقصور على صاحب الحساب عبر قواعد أمان على الخادم.</p>
+
+        <h2>6. الجهات المستقبلة والمشاركة</h2>
+        <p>لا تُبيع بياناتك أبداً. قد يعالجها المزوّدون التالون فقط للأغراض المذكورة:</p>
+        <ul>
+          <li><strong>Supabase:</strong> الاستضافة والمصادقة والمزامنة.</li>
+          <li><strong>Google AdMob:</strong> عرض الإعلانات وإدارة الموافقة.</li>
+          <li><strong>Firebase Cloud Messaging وCrashlytics:</strong> الإشعارات وتقارير الأعطال.</li>
+          <li><strong>OpenWeather:</strong> توقعات الطقس بناءً على إحداثيات المنحل المعني.</li>
+        </ul>
+        <p>قد يعالج بعض المزوّدين البيانات خارج المغرب أو الاتحاد الأوروبي، وتُغطى هذه النقلات بالضمانات المناسبة المنصوص عليها في القانون المعمول به.</p>
+
+        <h2>7. الإعلانات والموافقة</h2>
+        <p>التطبيق مجاني ويُموّل عبر إعلانات Google AdMob. إذا كنت في المنطقة الاقتصادية الأوروبية أو المملكة المتحدة أو سويسرا، تظهر شاشة موافقة من Google قبل أي إعلان مخصص، ويمكنك القبول أو الرفض أو إدارة خياراتك.</p>
+        <p>يمكنك تغيير موافقتك أو سحبها في أي وقت من: <strong>الإعدادات ← إعدادات خصوصية الإعلانات</strong>.</p>
+        <p>إذا رفضت الإعلانات المخصصة، فقد تُعرض إعلانات غير مخصصة حيث يسمح القانون. وإذا رفضت كل الإعلانات، فقد تتوقف بعض الميزات المموّلة بالإعلانات.</p>
+
+        <h2>8. مدة الاحتفاظ</h2>
+        <ul>
+          <li><strong>الحساب وبيانات تربية النحل:</strong> حتى حذف الحساب، ثم تُحذف نهائياً.</li>
+          <li><strong>النسخ الاحتياطية:</strong> حتى 30 يوماً بعد الحذف لحين تفريغ النسخ التقنية.</li>
+          <li><strong>السجلات التقنية وتقارير الأعطال:</strong> حتى 90 يوماً.</li>
+          <li><strong>بيانات الإعلانات:</strong> حسب المدد التي تحددها Google.</li>
+        </ul>
+
+        <h2>9. الأمان</h2>
+        <p>نتّخذ تدابير تقنية وتنظيمية معقولة: تشفير الاتصالات، ضبط الوصول، عزل البيانات حسب الحساب، ومصادقة آمنة. لا يوجد نظام آمن تماماً، لذا استخدم كلمة مرور قوية وفريدة.</p>
+
+        <h2>10. حقوقك</h2>
+        <p>وفقاً لقانون بلدك، تتمتع بالحقوق التالية:</p>
+        <ul>
+          <li><strong>الوصول:</strong> معرفة البيانات التي تُعالج.</li>
+          <li><strong>التصحيح:</strong> تصحيح البيانات غير الدقيقة.</li>
+          <li><strong>الحذف:</strong> حذف حسابك وبياناتك.</li>
+          <li><strong>التقييد والاعتراض:</strong> تقييد بعض المعالجات أو الاعتراض عليها.</li>
+          <li><strong>قابلية النقل:</strong> استلام بياناتك بصيغة مقروءة.</li>
+          <li><strong>سحب الموافقة:</strong> في أي وقت، خاصة للإعلانات المخصصة.</li>
+        </ul>
+        <p>لممارسة هذه الحقوق: <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a>. يمكنك أيضاً تقديم شكوى إلى CNDP في المغرب أو إلى سلطة حماية البيانات في بلد إقامتك.</p>
+
+        <h2>11. حذف الحساب</h2>
+        <p>يمكنك حذف حسابك وبياناتك نهائياً من التطبيق عبر: <strong>الإعدادات ← الحساب ← حذف الحساب</strong>، أو بمراسلتنا على <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a>. يؤدي الحذف إلى محو بياناتك وملفك الشخصي، مع مراعاة التزامات الحفظ القانونية ومدة تفريغ النسخ الاحتياطية.</p>
+
+        <h2>12. الأطفال</h2>
+        <p>التطبيق غير موجّه لمن هم دون 13 عاماً (أو دون 16 عاماً في المنطقة الاقتصادية الأوروبية). لا نجمع بيانات الأطفال عن قصد. إذا اعتقدت أن طفلاً زوّدنا ببيانات، راسلنا لحذفها.</p>
+
+        <h2>13. تعديلات السياسة</h2>
+        <p>قد نحدّث هذه السياسة لتعكس تغييرات قانونية أو تقنية. تُنشر النسخة الجديدة على هذه الصفحة بتاريخ سريان جديد، وقد يظهر إشعار داخل التطبيق عند التغييرات المهمة.</p>
+
+        <h2>14. التواصل</h2>
+        <p>لأي سؤال أو شكوى أو طلب يخص بياناتك:<br>البريد الإلكتروني: <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a><br>المسؤول: مطوّر Hivelogbee، المغرب.</p>
       `,
+
       en: `
         <h1>Hivelogbee Privacy Policy</h1>
-        <p class="effective-date"><strong>Effective Date:</strong> May 2026</p>
+        <p class="effective-date"><strong>Effective date:</strong> 26 October 2026 — Version 1.0</p>
+
         <h2>1. Data Controller</h2>
-        <p>This application is developed and managed by a developer based in Morocco.<br>For inquiries, contact: <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a></p>
+        <p>Hivelogbee is developed and managed by a developer based in Morocco.<br>For any privacy question: <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a></p>
+
         <h2>2. Applicable Law</h2>
-        <p>Governed by Moroccan law (Law 09-08). Disputes are subject to Moroccan courts.</p>
-        <h2>3. Collected Data</h2>
+        <p>Processing is governed by Moroccan law (Law No. 09-08 on the protection of individuals with regard to the processing of personal data).</p>
+        <p>If you reside in the European Economic Area, the United Kingdom or Switzerland, the GDPR, UK GDPR or Swiss FADP also apply, without prejudice to the rights granted by your local law.</p>
+
+        <h2>3. Data Collected</h2>
         <ul>
-          <li>Beekeeping data (apiaries, hives, inspections) and email.</li>
-          <li><strong>Photos/Media:</strong> Hivelogbee does NOT collect or store any images or media.</li>
-          <li><strong>Location:</strong> Only used when setting an apiary location for weather. Not tracked in background.</li>
+          <li><strong>Account data:</strong> email address, identifier, language and preferences.</li>
+          <li><strong>Beekeeping data:</strong> apiaries, hives, inspections, treatments, productions, reminders and notes you enter.</li>
+          <li><strong>Location:</strong> only when creating or editing an apiary, for weather forecasts. It is not tracked in the background and is not used for advertising.</li>
+          <li><strong>Notifications:</strong> notification token (FCM), time zone and language, to send the reminders and alerts you enabled.</li>
+          <li><strong>Technical data:</strong> device model, OS version, app version and crash reports (Firebase Crashlytics), to fix errors.</li>
+          <li><strong>Advertising:</strong> Google AdMob may collect the advertising identifier, approximate IP address and ad interaction data. Personalized ads are shown only with your consent where required by law.</li>
+          <li><strong>Photos and media:</strong> the app does not collect, process or store any images, videos or media files.</li>
         </ul>
-        <h2>4. Storage and Hosting</h2>
-        <p>Data is cached locally (Offline-First) and hosted via Supabase (servers in France, EU).</p>
-        <h2>5. Your Rights & Deletion</h2>
-        <p>You can permanently delete your account and data via <strong>Settings > Account > Delete account</strong> or by contacting us.</p>
+
+        <h2>4. Purposes and Legal Bases</h2>
+        <ul>
+          <li><strong>Providing the service:</strong> storing and syncing your beekeeping data (performance of contract).</li>
+          <li><strong>Backup and sync:</strong> keeping your data on our servers and restoring it on another device (performance of contract).</li>
+          <li><strong>Notifications:</strong> reminders, weather alerts and messages you enabled (consent or contract).</li>
+          <li><strong>Advertising:</strong> displaying ads (consent for personalized ads; legitimate interest for non-personalized ads where permitted).</li>
+          <li><strong>Security and improvement:</strong> preventing abuse and improving app stability (legitimate interest).</li>
+        </ul>
+
+        <h2>5. Storage and Hosting</h2>
+        <p>Your data is first stored locally on your device (offline-first), then synced with Supabase, hosted on servers located in the European Union (France). Communications are encrypted (TLS), and access is restricted to the account owner through server-side security rules.</p>
+
+        <h2>6. Recipients and Sharing</h2>
+        <p>Your data is never sold. It may be processed by the following providers, only for the purposes described:</p>
+        <ul>
+          <li><strong>Supabase:</strong> hosting, authentication and synchronization.</li>
+          <li><strong>Google AdMob:</strong> ad delivery and consent management.</li>
+          <li><strong>Firebase Cloud Messaging and Crashlytics:</strong> push notifications and crash reports.</li>
+          <li><strong>OpenWeather:</strong> weather forecasts based on the relevant apiary coordinates.</li>
+        </ul>
+        <p>Some providers may process data outside Morocco or the European Union. Such transfers are covered by the appropriate safeguards required by applicable law.</p>
+
+        <h2>7. Advertising and Consent</h2>
+        <p>The app is free and funded by advertising provided by Google AdMob. If you are in the European Economic Area, the United Kingdom or Switzerland, a Google consent prompt is shown before any personalized ad. You may accept, refuse or manage your choices.</p>
+        <p>You can change or withdraw your consent at any time from: <strong>Settings → Ad privacy settings</strong>.</p>
+        <p>If you refuse personalized ads, non-personalized ads may still be shown where permitted by law. If you refuse all advertising, some ad-funded features may no longer be available.</p>
+
+        <h2>8. Retention Periods</h2>
+        <ul>
+          <li><strong>Account and beekeeping data:</strong> until you delete your account, then permanently deleted.</li>
+          <li><strong>Backups:</strong> up to 30 days after deletion, while technical backups are purged.</li>
+          <li><strong>Technical logs and crash reports:</strong> up to 90 days.</li>
+          <li><strong>Advertising data:</strong> according to the periods set by Google.</li>
+        </ul>
+
+        <h2>9. Security</h2>
+        <p>We implement reasonable technical and organizational measures: encrypted communications, access control, per-account data isolation and secure authentication. No system is perfectly secure, so please use a unique, strong password.</p>
+
+        <h2>10. Your Rights</h2>
+        <p>Depending on your law, you have the following rights:</p>
+        <ul>
+          <li><strong>Access:</strong> know what data is processed.</li>
+          <li><strong>Rectification:</strong> correct inaccurate data.</li>
+          <li><strong>Erasure:</strong> delete your account and data.</li>
+          <li><strong>Restriction and objection:</strong> restrict or object to certain processing.</li>
+          <li><strong>Portability:</strong> receive your data in a readable format.</li>
+          <li><strong>Withdraw consent:</strong> at any time, especially for personalized advertising.</li>
+        </ul>
+        <p>To exercise these rights: <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a>. You may also lodge a complaint with the CNDP in Morocco or with the data protection authority in your country of residence.</p>
+
+        <h2>11. Account Deletion</h2>
+        <p>You can permanently delete your account and data from the app: <strong>Settings → Account → Delete account</strong>, or by contacting us at <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a>. Deletion erases your beekeeping data and profile, subject to legal retention obligations and the backup purge period.</p>
+
+        <h2>12. Children</h2>
+        <p>The app is not intended for children under 13 (or under 16 in the European Economic Area). We do not knowingly collect data about children. If you believe a child provided us with data, contact us to delete it.</p>
+
+        <h2>13. Changes to this Policy</h2>
+        <p>We may update this policy to reflect legal or technical changes. The new version is published on this page with a new effective date. For significant changes, a notice may be shown in the app.</p>
+
+        <h2>14. Contact</h2>
+        <p>For any question, complaint or request regarding your data:<br>Email: <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a><br>Controller: Hivelogbee developer, Morocco.</p>
       `,
+
       es: `
         <h1>Política de Privacidad de Hivelogbee</h1>
-        <p class="effective-date"><strong>Fecha de entrada:</strong> Mayo de 2026</p>
+        <p class="effective-date"><strong>Fecha de entrada en vigor:</strong> 26 de octubre de 2026 — Versión 1.0</p>
+
         <h2>1. Responsable del Tratamiento</h2>
-        <p>El desarrollo y gestión de este tratamiento están a cargo de un desarrollador con sede en Marruecos.<br>Para cualquier consulta, contacte: <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a></p>
+        <p>Hivelogbee es desarrollada y gestionada por un desarrollador con sede en Marruecos.<br>Para cualquier consulta sobre sus datos: <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a></p>
+
         <h2>2. Ley Aplicable</h2>
-        <p>Regida por la ley marroquí (Ley 09-08). Las disputas están sujetas a los tribunales marroquíes.</p>
+        <p>El tratamiento se rige por la ley marroquí (Ley n.º 09-08 relativa a la protección de las personas físicas en lo que respecta al tratamiento de datos personales).</p>
+        <p>Si reside en el Espacio Económico Europeo, el Reino Unido o Suiza, también se aplican el RGPD, el UK GDPR o la LPD suiza, sin perjuicio de los derechos que le otorgue su legislación local.</p>
+
         <h2>3. Datos Recopilados</h2>
         <ul>
-          <li>Datos apícolas (apiarios, colmenas, inspecciones) y correo electrónico.</li>
-          <li><strong>Fotos y Medios:</strong> Hivelogbee NO recopila ni almacena imágenes ni medios.</li>
-          <li><strong>Ubicación:</strong> Solo se usa al establecer la ubicación del apiario para el clima. No se rastrea en segundo plano.</li>
+          <li><strong>Datos de cuenta:</strong> correo electrónico, identificador, idioma y preferencias.</li>
+          <li><strong>Datos apícolas:</strong> apiarios, colmenas, inspecciones, tratamientos, producciones, recordatorios y notas que introduce.</li>
+          <li><strong>Ubicación:</strong> solo al crear o editar un apiario, para el pronóstico del tiempo. No se rastrea en segundo plano ni se usa con fines publicitarios.</li>
+          <li><strong>Notificaciones:</strong> token de notificación (FCM), zona horaria e idioma, para enviar los recordatorios y alertas activados.</li>
+          <li><strong>Datos técnicos:</strong> modelo del dispositivo, versión del sistema, versión de la app e informes de fallos (Firebase Crashlytics), para corregir errores.</li>
+          <li><strong>Publicidad:</strong> Google AdMob puede recopilar el identificador publicitario, la dirección IP aproximada y datos de interacción con anuncios. Los anuncios personalizados solo se muestran con su consentimiento cuando la ley lo exige.</li>
+          <li><strong>Fotos y medios:</strong> la app no recopila, procesa ni almacena imágenes, vídeos ni archivos multimedia.</li>
         </ul>
-        <h2>4. Almacenamiento y Alojamiento</h2>
-        <p>Los datos se almacenan en caché localmente (Offline-First) y se alojan a través de Supabase (servidores en Francia, UE).</p>
-        <h2>5. Sus Derechos y Eliminación</h2>
-        <p>Puede eliminar permanentemente su cuenta y datos a través de <strong>Configuración > Cuenta > Eliminar cuenta</strong> o contactándonos.</p>
+
+        <h2>4. Finalidades y Bases Legales</h2>
+        <ul>
+          <li><strong>Prestación del servicio:</strong> guardar y sincronizar sus datos apícolas (ejecución del contrato).</li>
+          <li><strong>Copia de seguridad y sincronización:</strong> conservar sus datos en nuestros servidores y restaurarlos en otro dispositivo (ejecución del contrato).</li>
+          <li><strong>Notificaciones:</strong> recordatorios, alertas meteorológicas y mensajes activados (consentimiento o contrato).</li>
+          <li><strong>Publicidad:</strong> mostrar anuncios (consentimiento para anuncios personalizados; interés legítimo para anuncios no personalizados cuando la ley lo permite).</li>
+          <li><strong>Seguridad y mejora:</strong> prevenir abusos y mejorar la estabilidad de la app (interés legítimo).</li>
+        </ul>
+
+        <h2>5. Almacenamiento y Alojamiento</h2>
+        <p>Sus datos se guardan primero localmente en su dispositivo (funcionamiento sin conexión) y luego se sincronizan con Supabase, alojado en servidores situados en la Unión Europea (Francia). Las comunicaciones están cifradas (TLS) y el acceso se limita al titular de la cuenta mediante reglas de seguridad del servidor.</p>
+
+        <h2>6. Destinatarios y Cesión</h2>
+        <p>Sus datos nunca se venden. Pueden ser tratados por los siguientes proveedores, únicamente para las finalidades descritas:</p>
+        <ul>
+          <li><strong>Supabase:</strong> alojamiento, autenticación y sincronización.</li>
+          <li><strong>Google AdMob:</strong> difusión de anuncios y gestión del consentimiento.</li>
+          <li><strong>Firebase Cloud Messaging y Crashlytics:</strong> notificaciones push e informes de fallos.</li>
+          <li><strong>OpenWeather:</strong> pronósticos meteorológicos a partir de las coordenadas del apiario correspondiente.</li>
+        </ul>
+        <p>Algunos proveedores pueden tratar datos fuera de Marruecos o de la Unión Europea. Estas transferencias están amparadas por las garantías adecuadas exigidas por la ley aplicable.</p>
+
+        <h2>7. Publicidad y Consentimiento</h2>
+        <p>La app es gratuita y se financia con publicidad de Google AdMob. Si se encuentra en el Espacio Económico Europeo, el Reino Unido o Suiza, se muestra una ventana de consentimiento de Google antes de cualquier anuncio personalizado. Puede aceptar, rechazar o gestionar sus opciones.</p>
+        <p>Puede cambiar o retirar su consentimiento en cualquier momento desde: <strong>Configuración → Privacidad de anuncios</strong>.</p>
+        <p>Si rechaza los anuncios personalizados, aún podrán mostrarse anuncios no personalizados cuando la ley lo permita. Si rechaza toda publicidad, algunas funciones financiadas por anuncios pueden dejar de estar disponibles.</p>
+
+        <h2>8. Plazos de Conservación</h2>
+        <ul>
+          <li><strong>Cuenta y datos apícolas:</strong> hasta que elimine su cuenta, después se borran definitivamente.</li>
+          <li><strong>Copias de seguridad:</strong> hasta 30 días tras la eliminación, mientras se purgan las copias técnicas.</li>
+          <li><strong>Registros técnicos e informes de fallos:</strong> hasta 90 días.</li>
+          <li><strong>Datos publicitarios:</strong> según los plazos definidos por Google.</li>
+        </ul>
+
+        <h2>9. Seguridad</h2>
+        <p>Aplicamos medidas técnicas y organizativas razonables: cifrado de comunicaciones, control de acceso, aislamiento de datos por cuenta y autenticación segura. Ningún sistema es perfectamente seguro, por lo que le recomendamos usar una contraseña única y robusta.</p>
+
+        <h2>10. Sus Derechos</h2>
+        <p>Según su legislación, dispone de los siguientes derechos:</p>
+        <ul>
+          <li><strong>Acceso:</strong> saber qué datos se tratan.</li>
+          <li><strong>Rectificación:</strong> corregir datos inexactos.</li>
+          <li><strong>Supresión:</strong> eliminar su cuenta y sus datos.</li>
+          <li><strong>Limitación y oposición:</strong> limitar u oponerse a determinados tratamientos.</li>
+          <li><strong>Portabilidad:</strong> recibir sus datos en un formato legible.</li>
+          <li><strong>Retirada del consentimiento:</strong> en cualquier momento, especialmente para la publicidad personalizada.</li>
+        </ul>
+        <p>Para ejercer estos derechos: <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a>. También puede presentar una reclamación ante la CNDP en Marruecos o ante la autoridad de protección de datos de su país de residencia.</p>
+
+        <h2>11. Eliminación de la Cuenta</h2>
+        <p>Puede eliminar definitivamente su cuenta y sus datos desde la app: <strong>Configuración → Cuenta → Eliminar cuenta</strong>, o contactándonos en <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a>. La eliminación borra sus datos apícolas y su perfil, sin perjuicio de las obligaciones legales de conservación y del plazo de purga de copias de seguridad.</p>
+
+        <h2>12. Menores</h2>
+        <p>La app no está destinada a menores de 13 años (o menores de 16 en el Espacio Económico Europeo). No recopilamos datos de menores a sabiendas. Si cree que un menor nos ha facilitado datos, contáctenos para eliminarlos.</p>
+
+        <h2>13. Cambios en esta Política</h2>
+        <p>Podemos actualizar esta política para reflejar cambios legales o técnicos. La nueva versión se publica en esta página con una nueva fecha de entrada en vigor. En caso de cambios importantes, puede mostrarse un aviso en la app.</p>
+
+        <h2>14. Contacto</h2>
+        <p>Para cualquier pregunta, reclamación o solicitud sobre sus datos:<br>Correo: <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a><br>Responsable: desarrollador de Hivelogbee, Marruecos.</p>
       `,
+
       tr: `
         <h1>Hivelogbee Gizlilik Politikası</h1>
-        <p class="effective-date"><strong>Yürürlük Tarihi:</strong> Mayıs 2026</p>
+        <p class="effective-date"><strong>Yürürlük tarihi:</strong> 26 Ekim 2026 — Sürüm 1.0</p>
+
         <h2>1. Veri Sorumlusu</h2>
-        <p>Bu uygulamanın geliştirilmesi ve yönetimi, Fas merkezli bir geliştirici tarafından yürütülmektedir.<br>İletişim için: <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a></p>
+        <p>Hivelogbee, Fas merkezli bir geliştirici tarafından geliştirilmekte ve yönetilmektedir.<br>Verilerinizle ilgili sorular için: <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a></p>
+
         <h2>2. Geçerli Kanun</h2>
-        <p>Fas yasalarına (Kanun 09-08) tabidir. Anlaşmazlıklar Fas mahkemelerine tabidir.</p>
+        <p>İşleme, Fas yasalarına (kişisel verilerin işlenmesine ilişkin 09-08 sayılı Kanun) tabidir.</p>
+        <p>Avrupa Ekonomik Alanı, Birleşik Krallık veya İsviçre'de ikamet ediyorsanız, yerel yasalarınızın tanıdığı haklar saklı kalmak kaydıyla GDPR, UK GDPR veya İsviçre FADP de uygulanır.</p>
+
         <h2>3. Toplanan Veriler</h2>
         <ul>
-          <li>Arıcılık verileri (arılıklar, kovanlar, denetimler) ve e-posta.</li>
-          <li><strong>Fotoğraflar/Medya:</strong> Hivelogbee HİÇBİR görüntü veya medyayı toplamaz veya saklamaz.</li>
-          <li><strong>Konum:</strong> Yalnızca hava durumu için arılık konumu ayarlanırken kullanılır. Arka planda izlenmez.</li>
+          <li><strong>Hesap verileri:</strong> e-posta adresi, kimlik, dil ve tercihler.</li>
+          <li><strong>Arıcılık verileri:</strong> girdiğiniz arılıklar, kovanlar, denetimler, tedaviler, üretim, hatırlatıcılar ve notlar.</li>
+          <li><strong>Konum:</strong> yalnızca arılık oluştururken veya düzenlerken hava tahmini için. Arka planda izlenmez ve reklam amacıyla kullanılmaz.</li>
+          <li><strong>Bildirimler:</strong> etkinleştirdiğiniz hatırlatıcı ve uyarıları göndermek için bildirim belirteci (FCM), saat dilimi ve dil.</li>
+          <li><strong>Teknik veriler:</strong> cihaz modeli, işletim sistemi sürümü, uygulama sürümü ve hata raporları (Firebase Crashlytics).</li>
+          <li><strong>Reklam:</strong> Google AdMob reklam kimliğini, yaklaşık IP adresini ve reklam etkileşim verilerini toplayabilir. Kişiselleştirilmiş reklamlar yalnızca yasanın gerektirdiği durumlarda onayınızla gösterilir.</li>
+          <li><strong>Fotoğraflar ve medya:</strong> uygulama hiçbir görüntü, video veya medya dosyası toplamaz, işlemez veya saklamaz.</li>
         </ul>
-        <h2>4. Depolama ve Barındırma</h2>
-        <p>Veriler yerel olarak önbelleğe alınır (Çevrimdışı Öncelikli) ve Supabase (Fransa, AB'deki sunucular) aracılığıyla barındırılır.</p>
-        <h2>5. Haklarınız ve Silme</h2>
-        <p>Hesabınızı ve verilerinizi <strong>Ayarlar > Hesap > Hesabı sil</strong> bölümünden veya bizimle iletişime geçerek kalıcı olarak silebilirsiniz.</p>
+
+        <h2>4. Amaçlar ve Hukuki Dayanaklar</h2>
+        <ul>
+          <li><strong>Hizmetin sunulması:</strong> arıcılık verilerinizi saklamak ve eşitlemek (sözleşmenin ifası).</li>
+          <li><strong>Yedekleme ve eşitleme:</strong> verilerinizi sunucularımızda tutmak ve başka bir cihazda geri yüklemek (sözleşmenin ifası).</li>
+          <li><strong>Bildirimler:</strong> etkinleştirdiğiniz hatırlatıcılar, hava uyarıları ve mesajlar (onay veya sözleşme).</li>
+          <li><strong>Reklam:</strong> reklam göstermek (kişiselleştirilmiş reklamlar için onay; yasanın izin verdiği durumlarda kişiselleştirilmemiş reklamlar için meşru menfaat).</li>
+          <li><strong>Güvenlik ve iyileştirme:</strong> kötüye kullanımı önlemek ve uygulama kararlılığını artırmak (meşru menfaat).</li>
+        </ul>
+
+        <h2>5. Depolama ve Barındırma</h2>
+        <p>Verileriniz önce cihazınızda yerel olarak saklanır (çevrimdışı öncelikli), ardından Avrupa Birliği'nde (Fransa) bulunan sunucularda barındırılan Supabase ile eşitlenir. İletişim şifrelenir (TLS) ve erişim, sunucu tarafı güvenlik kurallarıyla hesap sahibiyle sınırlandırılır.</p>
+
+        <h2>6. Alıcılar ve Paylaşım</h2>
+        <p>Verileriniz asla satılmaz. Yalnızca açıklanan amaçlarla aşağıdaki sağlayıcılar tarafından işlenebilir:</p>
+        <ul>
+          <li><strong>Supabase:</strong> barındırma, kimlik doğrulama ve eşitleme.</li>
+          <li><strong>Google AdMob:</strong> reklam sunumu ve onay yönetimi.</li>
+          <li><strong>Firebase Cloud Messaging ve Crashlytics:</strong> anlık bildirimler ve hata raporları.</li>
+          <li><strong>OpenWeather:</strong> ilgili arılık koordinatlarına dayalı hava tahminleri.</li>
+        </ul>
+        <p>Bazı sağlayıcılar verileri Fas veya Avrupa Birliği dışında işleyebilir. Bu aktarımlar, yürürlükteki yasanın öngördüğü uygun güvencelerle korunur.</p>
+
+        <h2>7. Reklam ve Onay</h2>
+        <p>Uygulama ücretsizdir ve Google AdMob reklamlarıyla finanse edilir. Avrupa Ekonomik Alanı, Birleşik Krallık veya İsviçre'deyseniz, kişiselleştirilmiş herhangi bir reklamdan önce Google onay ekranı gösterilir. Kabul edebilir, reddedebilir veya seçeneklerinizi yönetebilirsiniz.</p>
+        <p>Onayınızı istediğiniz zaman şuradan değiştirebilir veya geri çekebilirsiniz: <strong>Ayarlar → Reklam gizliliği ayarları</strong>.</p>
+        <p>Kişiselleştirilmiş reklamları reddederseniz, yasanın izin verdiği durumlarda kişiselleştirilmemiş reklamlar gösterilebilir. Tüm reklamları reddederseniz, reklamla finanse edilen bazı özellikler kullanılamayabilir.</p>
+
+        <h2>8. Saklama Süreleri</h2>
+        <ul>
+          <li><strong>Hesap ve arıcılık verileri:</strong> hesabınızı silene kadar, ardından kalıcı olarak silinir.</li>
+          <li><strong>Yedekler:</strong> silme işleminden sonra teknik yedekler temizlenene kadar en fazla 30 gün.</li>
+          <li><strong>Teknik günlükler ve hata raporları:</strong> en fazla 90 gün.</li>
+          <li><strong>Reklam verileri:</strong> Google tarafından belirlenen sürelere göre.</li>
+        </ul>
+
+        <h2>9. Güvenlik</h2>
+        <p>Makul teknik ve idari önlemler uygularız: iletişim şifreleme, erişim kontrolü, hesap bazında veri izolasyonu ve güvenli kimlik doğrulama. Hiçbir sistem tamamen güvenli değildir; lütfen güçlü ve benzersiz bir parola kullanın.</p>
+
+        <h2>10. Haklarınız</h2>
+        <p>Yasalarınıza bağlı olarak aşağıdaki haklara sahipsiniz:</p>
+        <ul>
+          <li><strong>Erişim:</strong> hangi verilerin işlendiğini öğrenme.</li>
+          <li><strong>Düzeltme:</strong> yanlış verileri düzeltme.</li>
+          <li><strong>Silme:</strong> hesabınızı ve verilerinizi silme.</li>
+          <li><strong>Kısıtlama ve itiraz:</strong> belirli işlemeleri kısıtlama veya itiraz etme.</li>
+          <li><strong>Taşınabilirlik:</strong> verilerinizi okunabilir bir biçimde alma.</li>
+          <li><strong>Onayı geri çekme:</strong> her zaman, özellikle kişiselleştirilmiş reklamlar için.</li>
+        </ul>
+        <p>Bu hakları kullanmak için: <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a>. Ayrıca Fas'ta CNDP'ye veya ikamet ettiğiniz ülkedeki veri koruma otoritesine şikâyette bulunabilirsiniz.</p>
+
+        <h2>11. Hesabın Silinmesi</h2>
+        <p>Hesabınızı ve verilerinizi uygulamadan kalıcı olarak silebilirsiniz: <strong>Ayarlar → Hesap → Hesabı sil</strong> veya <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a> adresinden bize ulaşarak. Silme işlemi, yasal saklama yükümlülükleri ve yedek temizleme süresi saklı kalmak kaydıyla arıcılık verilerinizi ve profilinizi siler.</p>
+
+        <h2>12. Çocuklar</h2>
+        <p>Uygulama 13 yaşından küçükler (Avrupa Ekonomik Alanı'nda 16 yaşından küçükler) için tasarlanmamıştır. Çocuklara ait verileri bilerek toplamayız. Bir çocuğun bize veri verdiğini düşünüyorsanız, silmemiz için bizimle iletişime geçin.</p>
+
+        <h2>13. Politikadaki Değişiklikler</h2>
+        <p>Yasal veya teknik değişiklikleri yansıtmak için bu politikayı güncelleyebiliriz. Yeni sürüm, yeni bir yürürlük tarihiyle bu sayfada yayımlanır. Önemli değişikliklerde uygulama içinde bildirim gösterilebilir.</p>
+
+        <h2>14. İletişim</h2>
+        <p>Verilerinizle ilgili her türlü soru, şikâyet veya talep için:<br>E-posta: <a href="mailto:awrghise@gmail.com">awrghise@gmail.com</a><br>Sorumlu: Hivelogbee geliştiricisi, Fas.</p>
       `
     };
 
@@ -156,7 +490,6 @@
       }
     }
 
-    // تنفيذ الدالة فور تحميل الصفحة
     changeLanguage();
 </script>
 </body>
